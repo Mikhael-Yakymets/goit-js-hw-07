@@ -25,4 +25,13 @@ const images = [
   },
 ];
 
-const button = document.querySelector('.my-button');
+const photoList = document.querySelector('.gallery');
+
+const markup = images
+  .map(
+    ({ url, alt }) =>
+      `<li class="gallery-item"><img src="${url}" alt="${alt}"></li>`
+  )
+  .join('');
+
+photoList.insertAdjacentHTML('beforeend', markup);
